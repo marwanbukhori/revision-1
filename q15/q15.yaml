@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-pod
+spec:
+  containers:
+    - name: busybox
+      image: busybox
+      securityContext:
+        capabilities:
+          add: ["NET_ADMIN", "SYS_TIME"]
+      command: ["sleep", "3200"]
